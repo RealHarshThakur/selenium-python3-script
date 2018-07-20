@@ -17,8 +17,9 @@ def passwords():
 	return passwds
 
 
-def Main(start,end):
-
+def Main():
+	start=int(input("Where to start?")) #because running all instances might freeze your system 
+	end=int(input("Where to end?"))
 	for i in range(start,end):
 		t=Thread(target=enter(i))
 		t.start()
@@ -41,13 +42,13 @@ def enter(i):
 		checkbox.click()
 
 		password.submit()
+		browser.close()
 		browser.quit()
 
 
 	
 if (__name__=="__main__"):
-	start=int(input("Where to start?")) #because running all instances might freeze your system PS: browser.quit() doesnt'work
-	end=int(input("Where to end?"))
-	Main(start,end)
+
+	Main()
 
 
